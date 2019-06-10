@@ -23,21 +23,21 @@ app.get('', (req, res)=> {
    const data =  {
         title: 'Home' 
     }
-    res.render('index', data)
+    res.render('Index', data)
 })
 
 app.get('/about', (req, res)=> {
     const data =  {
         title: 'About'
     }
-    res.render('about', data)
+    res.render('About', data)
 })
 
 app.get('/help', (req, res)=> {
     const data =  {
         title: 'Help'
     }
-    res.render('help', data)
+    res.render('Help', data)
 })
 
 
