@@ -8,6 +8,7 @@ const Forcast = require('../src/utils/forcast')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const DirectoryPath = path.join(__dirname, '../public')
 const ViewsPath = path.join(__dirname, '../templates/views')
@@ -20,7 +21,7 @@ hbs.registerPartials(PartialsPath)
  
 app.get('', (req, res)=> {
    const data =  {
-        title: 'Home'
+        title: 'Home' 
     }
     res.render('index', data)
 })
@@ -90,6 +91,6 @@ app.get('*',  (req, res) => {
 res.send('Error 404 page')
 })
  
-app.listen(3000, () => {
-    console.log('Server started')
+app.listen(port, () => {
+    console.log('Server started at port ' + port )
 })
