@@ -13,7 +13,8 @@ request({url: url, json: true}, (error, response) => {
     } else {
         callback(undefined, {
             'temperature': response.body.currently.temperature,
-            'RainProb': response.body.currently.precipProbability
+            'RainProb': response.body.currently.precipProbability,
+            'summary': response.body.daily.data[0].summary
         })   
     } 
 }) 

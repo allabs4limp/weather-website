@@ -16,6 +16,7 @@
 
           <p id="MsgOne"></p>
           <p id="ErrorMsg"></p>
+          <p id="MsgSummary"></p>
           </form>
 
         {{> footer}} 
@@ -28,12 +29,14 @@
     const Search = document.querySelector('input')
     const Message = document.querySelector('#MsgOne')
     const MsgError = document.querySelector('#ErrorMsg')
+    const MsgSummary = document.querySelector('#MsgSummary')
 
     weatherForm.addEventListener('submit', (e) => {
         e.preventDefault()
         const location  = Search.value
         Message.textContent = 'Loading...'
         MsgError.textContent = ''
+        MsgSummary.textContent = ''
         
         fetch('/weather?address=' + location).then((response) => {
           
@@ -41,9 +44,11 @@
                 if (data.error) {
                     MsgError.textContent = data.error
                     Message.textContent = ''
+                     MsgSummary.textContent = ''
                 } else {
                     Message.textContent = data.temperature
                     MsgError.textContent = data.RainProb
+                    MsgSummary.textContent = data.summary
                 }
               //  console.log(data)
               //  Message.textContent = data
