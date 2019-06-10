@@ -64,7 +64,8 @@ app.get('/weather', (req, res)=> {
                  
                    res.send({
                         temperature: ForcastResponse.temperature,
-                        RainProb: ForcastResponse.RainProb 
+                        RainProb: ForcastResponse.RainProb,
+                        summary: ForcastResponse.summary
                     })
                 }
             })

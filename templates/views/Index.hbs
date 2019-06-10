@@ -46,8 +46,9 @@
                     Message.textContent = ''
                      MsgSummary.textContent = ''
                 } else {
-                    Message.textContent = data.temperature
-                    MsgError.textContent = data.RainProb
+                  
+                    Message.textContent = 'Temperature: - ' + data.temperature
+                    MsgError.textContent = 'Rain probability: - '+ data.RainProb
                     MsgSummary.textContent = data.summary
                 }
               //  console.log(data)
